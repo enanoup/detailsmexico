@@ -1,0 +1,57 @@
+header {
+    box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.3);
+}
+
+.sticky__header {
+    background-color: rgba(255, 255, 255, 1) !important;
+}
+
+.router-link-active {
+    color: #FFFFFF !important;
+    background-color: rgba(146, 16, 24, 0.7) !important;
+    width: 100% !important;
+}
+
+.alinearTexto {
+    padding-left: 28px !important;
+}
+
+.width {
+    width: 100px !important;
+}
+
+.phone-link {
+    width: 100px;
+}
+
+.phone-icon {
+    position: relative;
+    font-size: 24px !important;
+    top: 4px !important;
+}
+
+.call-to-action {
+    font-size: 15px;
+    position: relative;
+    bottom: 0px;
+}
+
+.phone-blink {
+    min-width: 100%;
+}
+
+.shopcart {
+    padding-right: 4px !important;
+    padding-left: 16px !important;
+}
+
+@media (max-width: 420px) {
+    .call-to-action {
+        display: none;
+    }
+    .phone-icon {
+        font-size: 22px !important;
+    }
+}

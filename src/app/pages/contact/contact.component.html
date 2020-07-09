@@ -1,0 +1,111 @@
+<div class="mt-5 pt-4" id="top">
+
+</div>
+   
+   <!-- Start Contact Area -->
+    <section class="wn_contact_area bg--white pt--80 pb--80">
+        	<div class="container">
+        		<div class="row">
+        			<div class="col-lg-8 col-12">
+        				<div class="contact-form-wrap">
+        					<h2 class="contact__title">Contáctanos:</h2>
+        					<p>Envíanos cualquier comentario o duda que tengas. </p>
+                            <form [formGroup]="contactForm" (ngSubmit)="onSubmit(contactForm.value)" novalidate>
+                                <div class="single-contact-form space-between">
+									<input type="text" formControlName="firstname" name="firstname" placeholder="Nombre*" required>
+									<div *ngIf="contactForm.controls['firstname'].invalid && contactForm.controls['firstname'].touched"
+                                    	class="alert alert-danger">
+
+                                            <div *ngIf="contactForm.controls['firstname'].errors.required">
+                                                    Nombre es requerido.
+                                            </div>
+            
+                                    </div>
+									<input type="text" formControlName="lastname" name="lastname" placeholder="Apellido*" required>
+									<div *ngIf="contactForm.controls['lastname'].invalid && contactForm.controls['lastname'].touched"
+                                    	class="alert alert-danger">
+
+                                            <div *ngIf="contactForm.controls['lastname'].errors.required">
+                                                    Apellido es requerido.
+                                            </div>
+            
+                                    </div>
+                                </div>
+                                <div class="single-contact-form space-between">
+									<input type="email" formControlName="email" name="email" placeholder="Email*" required>
+									<div *ngIf="contactForm.controls['email'].invalid && contactForm.controls['email'].touched"
+                                    	class="alert alert-danger">
+
+                                            <div *ngIf="contactForm.controls['email'].errors.required">
+                                                Email es requerido.
+											</div>
+											<div *ngIf="contactForm.controls['email'].errors.email">
+                                                Email debe tener formato valido.
+                                            </div>
+            
+                                    </div>
+                                    <input type="text" formControlName="telefono" name="telefono" placeholder="Teléfono">
+                                </div>
+                                <div class="single-contact-form message">
+									<textarea name="message" formControlName="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+									<div *ngIf="contactForm.controls['mensaje'].invalid && contactForm.controls['mensaje'].touched"
+                                    	class="alert alert-danger">
+
+                                            <div *ngIf="contactForm.controls['mensaje'].errors.required">
+                                                Envíanos un mensaje
+											</div>
+            
+                                    </div>
+								</div>
+								<div class="single-contact-form" style="padding: 0 !important; margin: 0 !important;">
+									<re-captcha id="id_recaptcha_contact" formControlName="recaptcha" style="display: inline-block;" 
+                                            (resolved)="resolvedCaptcha($event)"
+                                            siteKey="{{siteKey}}">  
+                                    </re-captcha>
+								</div>
+                                <div class="contact-btn text-center pt-1" >
+                                    <button type="submit" [disabled]="!contactForm.valid" >Enviar</button>
+                                </div>
+                            </form>
+                        </div> 
+                        <div class="form-output">
+                            <p class="form-messege">
+                        </div>
+        			</div>
+        			<div class="col-lg-4 col-12 md-mt-40 sm-mt-40">
+        				<div class="wn__address">
+        					<h2 class="contact__title">Información</h2>
+        					<p> </p>
+        					<div class="wn__addres__wreapper">
+
+        						<div class="single__address">
+        							<i class="icon-phone icons"></i>
+        							<div class="content">
+										<span>Teléfono:</span>
+        								<p><a href="tel:5550180037">55 5018 0037</a></p>
+        							</div>
+        						</div>
+
+        						<div class="single__address">
+        							<i class="icon-envelope icons"></i>
+        							<div class="content">
+        								<span>Email:</span>
+        								<p>contacto@detailsmexico.com</p>
+        							</div>
+        						</div>
+
+        						<div class="single__address">
+        							<i class="icon-globe icons"></i>    
+        							<div class="content">
+        								<span>website:</span>
+        								<p>https://detailsmexico.com</p>
+        							</div>
+        						</div>
+
+        					</div>
+        				</div>
+        			</div>
+        		</div>
+        	</div>
+        </section>
+        <!-- End Contact Area -->

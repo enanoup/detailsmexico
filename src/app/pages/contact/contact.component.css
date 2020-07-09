@@ -1,0 +1,38 @@
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #787878;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: #787878;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: #787878;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: #787878;
+  }
+
+  #id_recaptcha_contact {
+
+    position: relative !important;
+    right: 50% !important;
+    left: 34% !important;
+
+    -webkit-transform: scale(0.80);
+    -moz-transform:    scale(0.80);
+    -ms-transform:     scale(0.80);
+    -o-transform:      scale(0.80);
+    transform: scale(0.80);
+
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+
+@media (max-width: 420px) {
+
+  #id_recaptcha_contact{
+    left: 20% !important;
+  }
+}

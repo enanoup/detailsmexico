@@ -1,0 +1,22 @@
+
+    {   
+        "/webservice": {
+            "target": "https://www.innovation.com.mx",
+            "secure": false,
+            "changeOrigin": true
+        },
+
+        "/api_importline": {
+            "target": "https://importline.com.mx",
+            "secure": false,
+            "changeOrigin": true
+        }, 
+
+        "/impresion-logos": {
+            "target": "https://detailsmexico.com",
+            "secure": false,
+            "changeOrigin": true
+        }
+    }
+    
+    

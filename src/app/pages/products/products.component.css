@@ -1,0 +1,57 @@
+
+
+.productos::-webkit-scrollbar { width: 0 !important; }
+.mat-progress-spinner::ng-deep circle { stroke: #DB773A !important; }
+
+@media (min-width: 1024px){
+
+    .productos {
+        max-height: 2000px !important;
+        overflow-y: auto;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+
+    .productos {
+        max-height: 1240px !important;
+        overflow-y: auto;
+    }
+
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  
+    .productos {
+        max-height: 800px !important;
+        overflow-y: auto;
+    }
+    
+  }
+
+  @media (min-width: 320px) and (max-width: 480px) {
+  
+    .productos {
+        max-height: 450px !important;
+        overflow-y: auto;
+    }
+    
+  }
+  
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: #787878;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    color: #787878;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    color: #787878;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    color: #787878;
+  }
+
+  .router-link-active {
+    color: #DB773A !important;
+  }

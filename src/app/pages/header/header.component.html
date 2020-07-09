@@ -1,0 +1,83 @@
+<div class="wrapper" id="wrapper">
+    <!-- Header -->
+    <header id="wn__header" class="header__area header__absolute sticky__header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-6 col-lg-2">
+                    <div class="logo">
+                        <a routerLink="/index" fragment="top">
+                            <img src="assets/images/logo/logo.png" alt="logo images">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8 d-none d-lg-block">
+                    <nav class="mainmenu__nav justify-content-end">
+                        <ul class="meninmenu d-flex ">
+                            <li class="drop width"><a class="alinearTexto" routerLink="/index" fragment="top" routerLinkActive="router-link-active">Home</a></li>
+                            <li class="drop"><a routerLink="/products" fragment="top" routerLinkActive="router-link-active">Productos</a></li>
+                            <li class="drop text-center"><a routerLink="/catalogos" fragment="top" routerLinkActive="router-link-active">Descargas PDF</a></li>
+                            <li class="drop"><a routerLink="/contact" fragment="top" routerLinkActive="router-link-active">Contacto</a></li>
+                            <li class="drop text-center"><a routerLink="/checkout" fragment="top" routerLinkActive="router-link-active">Revisa tu Cotización</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-6 col-sm-6 col-md-6 col-lg-2">
+                    <ul class="header__sidebar__right d-flex justify-content-end align-items-center">
+
+                        <li class="phone-blink">
+
+                            <a href="tel:5550180037" class="phone-link text-right" style="min-width: 100%;">
+                                <i class="icon-phone icons phone-icon"></i>
+                                <span class="pl-1 call-to-action">55 5018 0037</span>
+                            </a>
+                        </li>
+
+                        <li class="shopcart">
+                            <a class="cartbox_active" id="trigger" href="#" (click)="obtenerShoppingCart();">
+
+                                <span class="product_qun">{{ productosCart.length }}</span></a>
+
+                            <app-shopping-cart [productosCart]="productosCart" [subtotal]="subTotal" (refreshCart)="refresh()"></app-shopping-cart>
+
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <!-- Start Mobile Menu -->
+            <div class="row d-none">
+                <div class="col-lg-12 d-none">
+                    <nav class="mobilemenu__nav">
+                        <ul class="meninmenu">
+                            <li><a href="/index" routerLinkActive="router-link-active">Home</a></li>
+                            <li><a href="/products" routerLinkActive="router-link-active">Productos</a></li>
+                            <li><a href="/catalogos" routerLinkActive="router-link-active">Descargas PDF</a></li>
+                            <li><a href="/contact" routerLinkActive="router-link-active">Contacto</a></li>
+                            <li><a href="/checkout" routerLinkActive="router-link-active">Revisa tu Cotización</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <!-- End Mobile Menu -->
+            <div class="mobile-menu d-block d-lg-none">
+            </div>
+            <!-- Mobile Menu -->
+        </div>
+    </header>
+    <!-- //Header -->
+    <!-- Start Search Popup -->
+    <div class="brown--color box-search-content search_active block-bg close__top">
+        <form id="search_mini_form" class="minisearch" action="#">
+            <div class="field__search">
+                <input type="text" placeholder="Search entire store here...">
+                <div class="action">
+                    <a href="#"><i class="zmdi zmdi-search"></i></a>
+                </div>
+            </div>
+        </form>
+        <div class="close__wrap">
+            <span>close</span>
+        </div>
+    </div>
+
+</div>

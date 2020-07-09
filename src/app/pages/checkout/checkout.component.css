@@ -1,0 +1,37 @@
+.contactForm {
+    max-width: 60% !important;
+}
+
+.btn-danger {
+    background-color: #921018 !important;
+}
+.btn-danger:hover {
+    border-color: rgb(255, 239, 148) !important;
+    background-color: #f0ec20 !important;
+    color: #6C6C6C !important;
+}
+
+.not-found-style{
+    padding-top: 100px;
+    margin-bottom: 100px;
+    color: #5A5A5A;
+    font-family: Roboto;
+  }
+
+  #id_recaptcha_checkout {
+
+    
+
+    -webkit-transform: scale(0.80);
+    -moz-transform:    scale(0.80);
+    -ms-transform:     scale(0.80);
+    -o-transform:      scale(0.80);
+    transform: scale(0.80);
+
+    -webkit-transform-origin: 0 0;
+    -moz-transform-origin: 0 0;
+    -ms-transform-origin: 0 0;
+    -o-transform-origin: 0 0;
+    transform-origin: 0 0;
+}
+

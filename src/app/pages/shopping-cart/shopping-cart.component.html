@@ -1,0 +1,47 @@
+
+
+<!-- Start Shopping Cart -->
+<div class="block-minicart minicart__active shopping-cart">
+    <div class="minicart-content-wrapper">
+        <div class="micart__close">
+            <span>cerrar</span>
+        </div>
+        <div class="items-total d-flex justify-content-between">
+            <span>{{ productosCart.length }} artículos</span>
+            <span>Subtotal</span>
+        </div>
+        <div class="total_amount text-right">
+            <span>{{ subtotal | currency}}</span>
+        </div>
+        <div class="mini_action checkout">
+            <a class="checkout__btn" [routerLink]="['/checkout']" routerLinkActive="router-link-active" (click)="closeShoppingCart()">Haz tu pedido</a>
+        </div>
+        <div class="single__items" *ngIf="productosCart.length > 0; else noResultsFound">
+            <div class="miniproduct">
+                <div  *ngFor="let producto of productosCart" class="item01 d-flex">
+                    <div class="thumb">
+                        <a [routerLink]="['/products/single-product', producto.sku]" fragment="singleProd"><img [src]="producto.urls[0].url" alt="product images"></a>
+                    </div>
+                    <div class="content">
+                        <h6><a [routerLink]="['/products/single-product', producto.sku]" fragment="singleProd">{{ producto.nombre }}</a></h6>
+                        <span class="prize">{{ producto.sumaTotal | currency}}</span>
+                        <div class="product_prize d-flex justify-content-between">
+                            <span class="qun">Cantidad: {{ producto.solicitud }}</span>
+                            <span *ngIf="producto.hasDescuento" class="qun blink" style="color:rgb(150, 44, 12)"> <strong>¡Producto con Descuento!</strong></span>
+                            <ul class="d-flex justify-content-end">
+                                <!--li><a href="#"><i class="zmdi zmdi-settings"></i></a></li-->
+                                <li><a (click)="borrarItem(producto.idProducto); refreshCartEmitter();"><i class="zmdi zmdi-delete"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #noResultsFound>
+            <h6 class="pb-3 text-center not-found-style pt-4"> <strong>Aún no hay productos en el carrito,<br> <span style="color:rgb(150, 44, 12) !important;"><a routerLink="/products">agrega productos aquí</a></span></strong></h6>
+        </ng-template>
+        <div class="mini_action cart">
+            <a class="cart__btn" [routerLink]="['/checkout']" routerLinkActive="router-link-active" (click)="closeShoppingCart()">Ver y Editar Carrito</a>
+        </div>
+    </div>
+</div>

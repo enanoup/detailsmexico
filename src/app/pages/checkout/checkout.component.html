@@ -1,0 +1,188 @@
+<!-- Start Bradcaump area -->
+<div class="ht__bradcaump__area bg-image--11" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bradcaump__inner text-center">
+                        <h2 class="bradcaump-title">Cotización</h2>
+                        <nav class="bradcaump-content">
+                          <a class="breadcrumb_item" routerLink="/index">Home</a>
+                          <span class="brd-separetor">/</span>
+                          <span class="breadcrumb_item active">Cotización</span>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Bradcaump area -->
+    <!-- cart-main-area start -->
+    <div class="cart-main-area section-padding--lg bg--white">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 ol-lg-12">
+                        <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)" novalidate>               
+                            <div class="table-content wnro__table table-responsive" *ngIf="productosCarrito.length > 0; else noResultsFound">
+                                <table>
+                                    <thead>
+                                        <tr class="title-top">
+                                            <th class="product-thumbnail">Imagen</th>
+                                            <th class="product-name">Producto</th>
+                                            <th class="product-name">SKU</th>
+                                            <th class="product-price">Precio Unitario</th>
+                                            <th class="product-quantity">Cantidad</th>
+                                            <th class="product-subtotal" style="color:rgb(55, 110, 1)">Precio Especial</th>
+                                            <th class="product-subtotal">Subtotal</th>   
+                                            <th class="product-remove">Quitar</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr *ngFor="let producto of productosCarrito">
+                                            <td class="product-thumbnail"><a [routerLink]="['/products/single-product', producto.sku]" fragment="singleProd"><img [src]="producto.urls[0].url" alt="product img"></a></td>
+                                            <td class="product-name"><a [routerLink]="['/products/single-product', producto.sku]" fragment="singleProd">{{ producto.nombre }}</a></td>
+                                            <td class="product-name"><a [routerLink]="['/products/single-product', producto.sku]" fragment="singleProd">{{ producto.sku }}</a></td>
+                                            <td class="product-price"><span class="amount"> {{ producto.precioActual | currency}} </span></td>
+                                            <td class="product-quantity">
+                                                <input type="number" [value]="producto.solicitud" (change)="updateCart( $event, producto )" min="1" pattern="^[0-9]+" #inputQty>
+                                                <div *ngIf="inputQty.value > producto.cantidad" class="alert alert-danger mt-1">
+                                                    <div>
+                                                        Solo hay {{ producto.cantidad }} disponibles
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td class="product-subtotal" style="color:rgb(55, 110, 1)">{{ (producto.hasDescuento) ? (producto.precioConDescuento | currency) : '' }}</td>
+                                            <td class="product-subtotal">{{ producto.sumaTotal | currency}}</td>
+                                            <td class="product-remove"><a [routerLink]="['/checkout']" routerLinkActive="router-link-active" (click)="quitarProducto(producto.idProducto)">X</a></td>
+                                        </tr>
+                                      
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <ng-template #noResultsFound>
+                                    <h3 class="pb-5 text-center not-found-style"> <strong>Aún no hay productos en el carrito,<br> agrega productos <a routerLink="/products">aquí</a></strong></h3>
+                            </ng-template>
+
+                            <div class="row pb-5">
+                                    <div class="col-lg-6 offset-lg-6" >
+                                        <div class="cartbox__total__area">
+                                            <div class="cartbox-total d-flex justify-content-between">
+                                                <ul class="cart__total__list">
+                                                    <li>Total</li>
+                                                    <li>+ IVA</li>
+                                                </ul>   
+                                                <ul class="cart__total__tk">
+                                                    <li>{{ subTotal | currency }} </li>
+                                                    <li>{{ subTotal * 0.16 | currency }}</li>
+                                                </ul>
+                                            </div>
+                                            <div class="cart__total__amount">
+                                                <span><strong>Gran Total</strong></span>
+                                                <span><strong #Total> {{ subTotal * iva | currency }} </strong></span>
+                                            </div>
+                                            <div class="cartbox-total d-flex justify-content-between" *ngIf="ahorroTotal > 0">
+                                                <ul class="cart__total__list">
+                                                    <li></li>
+                                                </ul>   
+                                                <ul class="cart__total__tk">
+                                                    <li style="color:rgb(55, 110, 1); font-size: 18px">Ahorraste: {{ ahorroTotal | currency }} <i class="fa fa-check"></i></li>
+                                                </ul>
+                                            </div>
+                                            <div class="cartbox-total d-flex justify-content-end pt-2 pb-2">
+                                                    
+                                                    <ul >
+                                                        <li><span style="font-size: 18px;">* Los precios NO incluyen envío o costos de impresión</span></li>
+                                                    </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                        <div class="cartbox__btn">
+                            
+                            <div class="row justify-content-center">
+                                    <div class="col-12 p-4">
+                                            <h3 class="text-center">Completa los campos para enviar tu solicitud</h3>
+                                    </div>
+                                    <div class="col-xs-6 col-lg-4 form-group contactForm" >
+                                            <label for="nombre">Nombre:*</label>
+                                            <input type="text" class="form-control" formControlName="nombre" id="nombre" placeholder="Nombre" required>
+                                            <div *ngIf="checkoutForm.controls['nombre'].invalid && checkoutForm.controls['nombre'].touched"
+                                            class="alert alert-danger">
+
+                                            <div *ngIf="checkoutForm.controls['nombre'].errors.required">
+                                                    Nombre es requerido.
+                                            </div>
+                                            <div *ngIf="checkoutForm.controls['nombre'].errors.minlength">
+                                                    El nombre debe de ser mayor a 4 caracteres.
+                                            </div>
+                                            </div>
+                                    </div>
+                                   
+                                    <div class="col-xs-6 col-lg-4 form-group contactForm" >
+                                        <label for="email">Email:*</label>
+                                        <input type="email" class="form-control" id="email" formControlName="email" aria-describedby="emailHelp" placeholder="Email" required>
+                                        <div *ngIf="checkoutForm.controls['email'].invalid && checkoutForm.controls['email'].touched"
+                                            class="alert alert-danger">
+                                            <div *ngIf="checkoutForm.controls['email'].errors.required">
+                                                Email es requerido.
+                                            </div>
+                                            <div *ngIf="checkoutForm.controls['email'].errors.email">
+                                                Email debe tener formato valido.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="col-xs-6 col-lg-4 form-group contactForm" >
+                                        <label for="telefono">Teléfono de Contacto:</label>
+                                        <input type="text" class="form-control" id="telefono" formControlName="telefono" placeholder="Teléfono">
+                                    </div>
+
+                                </div>
+
+                                <div class="row justify-content-center text-center">
+
+                                    <div class="col-xs-6 col-lg-4 contactForm text-center">
+                                        <input type="checkbox" formControlName="logo" (change)="onChangeCheckbox($event)">
+                                        <span class="checkbox-custom"></span>
+                                        <label style="color: #2BA744; font-weight: bold;">&nbsp;¡Cotiza la impresión de tu logo!</label>
+                                    </div>
+
+                                </div>
+
+                                <div class="row justify-content-center">
+                                    <div class="col-12 text-center pb-3">
+                                        <span style="color:red;" *ngIf="message">{{message}}</span>
+                                    </div>    
+                                   
+                                    <div *ngIf="checkbox" class="card border-secondary mb-3" style="max-width: 18rem;">
+                                        
+                                                <input type="file" style="display: none;" name="image-logo" accept='image/*' (change)="handleFileInput( $event )" #fileInput>
+                                                <button *ngIf="!imageRender" type="button" class="btn btn-warning" (click)="fileInput.click()"><i class="fa fa-picture-o pr-2" aria-hidden="true"></i>Subir logo</button>
+                                                <button *ngIf="imageRender" type="button" class="btn btn-primary" (click)="fileInput.click()">Cambiar logo</button>
+                                                <img *ngIf="imageRender" [src]="imageRender">    
+                                    </div>
+
+                                </div>
+                                <div class="row justify-content-center">
+                                    <div class="col-8 col-sm-6 col-md-4 col-lg-3">
+                                        <re-captcha id="id_recaptcha_checkout" class="recaptcha-responsive" formControlName="recaptcha" style="display: inline-block;" 
+                                        (resolved)="resolvedCaptcha($event)"
+                                        siteKey="{{siteKey}}">  
+                                    </re-captcha>
+                                    </div>
+
+                                </div>
+
+                     
+                            <ul class="cart__btn__list d-flex flex-wrap flex-md-nowrap flex-lg-nowrap justify-content-center pt-3">
+                                <li><button type="submit" class="btn btn-danger btn-lg " [disabled]="!checkoutForm.valid">Enviar Solicitud</button></li>
+                            </ul>
+                        </div>
+                    </form> 
+                    </div>
+                </div>
+               
+            </div>  
+        </div>
+        <!-- cart-main-area end -->

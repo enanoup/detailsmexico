@@ -1,158 +1,120 @@
-[
-{
-    "idProducto": 2780,
-    "sku": "CR-13",
-    "nombre": "LICUADORA PORTATIL RECARGABLE MEDIANTE CABLE USB",
-    "descripcion": "LICUADORA PORTATIL RECARGABLE MEDIANTE CABLE USB, DE GRAN POTENCIA, DE 380 ML.",
-    "hasThumbnails": true,
-    "hasDescuento": false,
-    "precioAnterior": 0.0,
-    "precioActual": 600,
-    "rating": 4,
-    "nuevoProducto": true,
-    "masVendido": false,
-    "created": "jul 23, 2019",
-    "cantidad": 70,
-    "urls": [
-        {
+[{
+        "idProducto": 2780,
+        "sku": "EL92041",
+        "nombre": "POWERBANK/BATERIA WIRELESS 4000MAH QI BL",
+        "descripcion": "POWERBANK/BATERIA WIRELESS 4000MAH QI BL",
+        "hasThumbnails": true,
+        "hasDescuento": false,
+        "precioAnterior": 0.0,
+        "precioActual": 647.76,
+        "rating": 5,
+        "nuevoProducto": true,
+        "masVendido": false,
+        "created": "jul 23, 2019",
+        "cantidad": 100,
+        "urls": [{
             "idImg": 9743,
             "idProducto": 2780,
-            "url": "https://importline.com.mx/imagenes/productos/medianas/2856401380CR13V.jpg"
-        },
-        {
-            "idImg": 9744,
-            "idProducto": 2781,
-            "url": "https://importline.com.mx/imagenes/productos/medianas/2711517238CR13A.jpg"
-        }
-    ],
-    "categorias": [
-        {
+            "url": "https://www.promoline.com.mx/eshop/images/newpromoline/EL92041PLBL.jpg"
+        }],
+        "categorias": [{
             "idCategoria": 18,
-            "descripcion": "Tecnología"
-        }
-    ],
-    "subcategorias": [
-        {
+            "descripcion": "Electrónicos y Sus Accesorios"
+        }],
+        "subcategorias": [{
             "idCategoria": 18,
             "idSubcategoria": 33,
-            "descripcion": "Bocinas"
-        }
-    ]
-},
-{
-    "idProducto": 2781,
-    "sku": "ES21369CRNG",
-    "nombre": "BOLIGRAFO CROSS EDGE NG",
-    "descripcion": "BOLIGRAFO CROSS EDGE NG",
-    "hasThumbnails": true,
-    "hasDescuento": false,
-    "precioAnterior": 0.0,
-    "precioActual": 317.04,
-    "rating": 4,
-    "nuevoProducto": true,
-    "masVendido": false,
-    "created": "jul 23, 2019",
-    "cantidad": 1,
-    "urls": [
-        {
-            "idImg": 9745,
-            "idProducto": 2781,
-            "url": "https://www.promoline.com.mx/eshop/images/newpromoline/ES21369CRNG.jpg"
-        }
-    ],
-    "categorias": [
-        {
+            "descripcion": "Electrónicos y Sus Accesorios"
+        }]
+    },
+    {
+        "idProducto": 2781,
+        "sku": "OF32015",
+        "nombre": "LIBRETA ECOLOGICA 70HJS C/BOLI JUNIOR AZ",
+        "descripcion": "LIBRETA ECOLOGICA 70HJS C/BOLI JUNIOR AZ",
+        "hasThumbnails": true,
+        "hasDescuento": false,
+        "precioAnterior": 0.0,
+        "precioActual": 26.19,
+        "rating": 4,
+        "nuevoProducto": true,
+        "masVendido": false,
+        "created": "jul 23, 2019",
+        "cantidad": 11870,
+        "urls": [{
+                "idImg": 9745,
+                "idProducto": 2781,
+                "url": "https://www.promoline.com.mx/eshop/images/newpromoline/OF32015PLAZ.jpg"
+            }
+
+        ],
+        "categorias": [{
             "idCategoria": 18,
-            "descripcion": "Tecnología"
-        }
-    ],
-    "subcategorias": [
-        {
+            "descripcion": "Oficina"
+        }],
+        "subcategorias": [{
             "idCategoria": 18,
             "idSubcategoria": 33,
-            "descripcion": "Bocinas"
-        }
-    ]
-},
-{
-    "idProducto": 2782,
-    "sku": "AUD-04B",
-    "nombre": "AURICULAR CON CONEXION VIA BLUETOOTH, INCLUYE ESTUCHE CARGADOR.",
-    "descripcion": "AURICULAR CON CONEXION VIA BLUETOOTH, INCLUYE ESTUCHE CARGADOR.",
-    "hasThumbnails": true,
-    "hasDescuento": false,
-    "precioAnterior": 0.0,
-    "precioActual": 137.5,
-    "rating": 4,
-    "nuevoProducto": true,
-    "masVendido": false,
-    "created": "jul 23, 2019",
-    "cantidad": 1720,
-    "urls": [
-        {
+            "descripcion": "Oficina"
+        }]
+    },
+    {
+        "idProducto": 2782,
+        "sku": "PL00555",
+        "nombre": "CHAROLITA PIEL / VIDRIO OTOMI MO",
+        "descripcion": "CHAROLITA PIEL / VIDRIO OTOMI MO",
+        "hasThumbnails": true,
+        "hasDescuento": false,
+        "precioAnterior": 0.0,
+        "precioActual": 848.73,
+        "rating": 5,
+        "nuevoProducto": true,
+        "masVendido": false,
+        "created": "jul 23, 2019",
+        "cantidad": 100,
+        "urls": [{
             "idImg": 9747,
             "idProducto": 2782,
-            "url": "https://importline.com.mx/imagenes/productos/medianas/1529481163AUD04B.jpg"
-        }
-    ],
-    "categorias": [
-        {
+            "url": "https://www.promoline.com.mx/eshop/images/newpromoline/PL00555KNMO.jpg"
+        }],
+        "categorias": [{
             "idCategoria": 18,
-            "descripcion": "Tecnología"
-        }
-    ],
-    "subcategorias": [
-        {
+            "descripcion": "Hogar, Cocina y Decoración"
+        }],
+        "subcategorias": [{
             "idCategoria": 18,
             "idSubcategoria": 33,
-            "descripcion": "Bocinas"
-        }
-    ]
-},
-{
-    "idProducto": 2783,
-    "sku": "CAB-01",
-    "nombre": "CABLE LLAVERO METALICO, FABRICADO EN PVC Y METAL INCLUYE CABLE CON LA NUEVA TECNOLOGIA 2 EN 1 (iOS Y ANDROID)",
-    "descripcion": "CABLE LLAVERO METALICO, FABRICADO EN PVC Y METAL INCLUYE CABLE CON LA NUEVA TECNOLOGIA 2 EN 1 (iOS Y ANDROID)",
-    "hasThumbnails": true,
-    "hasDescuento": false,
-    "precioAnterior": 0.0,
-    "precioActual": 38.5,
-    "rating": 4,
-    "nuevoProducto": true,
-    "masVendido": false,
-    "created": "jul 23, 2019",
-    "cantidad": 208,
-    "urls": [
-        {
-            "idImg": 9749,
-            "idProducto": 2783,
-            "url": "https://importline.com.mx/imagenes/productos/medianas/1862116772CAB01A.jpg"
-        },
-        {
-            "idImg": 9750,
-            "idProducto": 2784,
-            "url": "https://importline.com.mx/imagenes/productos/medianas/3446195781CAB01R.jpg"
-        },
-        {
-            "idImg": 9751,
-            "idProducto": 2785,
-            "url": "https://importline.com.mx/imagenes/productos/medianas/3830466857CAB01N.jpg"
-        }
-
-    ],
-    "categorias": [
-        {
+            "descripcion": "Hogar, Cocina y Decoración"
+        }]
+    },
+    {
+        "idProducto": 2787,
+        "sku": "DP31003HSGR",
+        "nombre": "SILLA PARA ACAMPAR HIGH SIERRA GR",
+        "descripcion": "SILLA PARA ACAMPAR HIGH SIERRA GR",
+        "hasThumbnails": true,
+        "hasDescuento": false,
+        "precioAnterior": 0.0,
+        "precioActual": 768.03,
+        "rating": 5,
+        "nuevoProducto": true,
+        "masVendido": false,
+        "created": "jul 23, 2019",
+        "cantidad": 16,
+        "urls": [{
+            "idImg": 9747,
+            "idProducto": 2782,
+            "url": "https://www.promoline.com.mx/eshop/images/newpromoline/DP31003HSGR.jpg"
+        }],
+        "categorias": [{
             "idCategoria": 18,
-            "descripcion": "Tecnología"
-        }
-    ],
-    "subcategorias": [
-        {
+            "descripcion": "Deportes, Aire Libre y Juegos"
+        }],
+        "subcategorias": [{
             "idCategoria": 18,
             "idSubcategoria": 33,
-            "descripcion": "Bocinas"
-        }
-    ]
-}]
+            "descripcion": "Deportes, Aire Libre y Juegos"
+        }]
+    }
 
+]

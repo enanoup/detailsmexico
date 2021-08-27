@@ -2,14 +2,21 @@ import { Injectable } from '@angular/core';
 import { Resolve, ActivatedRouteSnapshot } from '@angular/router';
 import { Producto } from './interfaces/producto-interface';
 import { ProductoService } from '../services/producto.service';
+import { LocalStorageService } from '../services/local-storage.service';
 
 @Injectable()
 export class UserProductoResolve implements Resolve<Producto> {
 
-  constructor(private productoService: ProductoService) {}
+  constructor(private productoService: ProductoService) {
+  }
 
   async resolve(route: ActivatedRouteSnapshot) {
 
+     // Verificamos si estan cargados los productos
+     /*
+     await this.productoService.getAllDetailProducts();
+     await this.productoService.getNewAndBestsellerProducts();
+*/
     // Aquí tenemos que poner una condicion para cada servicio
 
     let producto = null;

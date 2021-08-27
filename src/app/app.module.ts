@@ -3,7 +3,7 @@ import { NgModule} from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { PageModule } from './pages/page.module';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
@@ -13,6 +13,12 @@ import { CustomPaginatorIntl } from './pages/paginator-es';
 import { RequestCacheService } from './cacheHTTP/request-cache.service';
 import { CacheInterceptorService } from './cacheHTTP/cache-interceptor.service';
 import { CheckoutResolve } from './pages/checkout.resolve';
+import { NgxSoapModule } from 'ngx-soap';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProductResolver } from './pages/products.resolver';
+import { ShareButtonsModule } from 'ngx-sharebuttons/buttons';
+import { ShareIconsModule } from 'ngx-sharebuttons/icons';
+
 
 @NgModule({
   declarations: [
@@ -23,10 +29,14 @@ import { CheckoutResolve } from './pages/checkout.resolve';
     AppRoutingModule,
     BrowserAnimationsModule,
     PageModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxSoapModule,
+    ShareButtonsModule,
+    ShareIconsModule
   ],
   providers: [
       UserProductoResolve,
+      ProductResolver,
       CheckoutResolve,
       CustomPaginatorIntl,
       { provide: MatPaginatorIntl, useClass: CustomPaginatorIntl},

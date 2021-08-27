@@ -14,22 +14,25 @@ export class SearchPipe implements PipeTransform {
 
     // Validamos. Por alguna razón hay un producto de los web services que traen un NULL
     args = (args != null) ? this.filtrar_acentos( args ) : '';
-
+ 
     for (const producto of value) {
-
+      
        // Validamos. Por alguna razón hay un producto de los web services que traen un NULL
       const nombre = (producto.nombre != null) ? this.filtrar_acentos(producto.nombre) : '';
       const descripcion = (producto.descripcion) ? this.filtrar_acentos(producto.descripcion) : '';
       const sku = (producto.sku) ? this.filtrar_acentos(producto.sku) : '';
-
-      if (nombre.indexOf(args) > -1 ||
-          descripcion.indexOf(args) > -1 ||
-            sku.indexOf(args) > -1 ) {
+      const categoria = (producto.categorias != null ) ? this.filtrar_acentos(producto.categorias[0].descripcion) : '';
+      
+      if (nombre.indexOf(args) != -1 ||
+          descripcion.indexOf(args) != -1 ||
+          sku.indexOf(args) != -1 || 
+          categoria.indexOf(args) != -1) {
 
         resultProductos.push(producto);
 
       }
     }
+  
 
     this.productoService.setPipeResults(resultProductos.length);
 

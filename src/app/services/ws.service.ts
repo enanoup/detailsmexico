@@ -2,8 +2,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { PromolinePrice, PromolineProductSingle, PromolineActiveItem } from '../pages/interfaces/promoline-interface';
-import { InnovationProduct } from '../pages/interfaces/innovation-interface';
+import { InnovationProduct, InnovationExistencias } from '../pages/interfaces/innovation-interface';
 import { Producto } from '../pages/interfaces/producto-interface';
+import { ImportlineResponse } from '../pages/interfaces/importline-interface';
 
 /*
   ESTE SERVICIO CONECTA DIRECTO CON LOS WEB SERVICES DE LOS PROVEEDORES
@@ -14,7 +15,7 @@ import { Producto } from '../pages/interfaces/producto-interface';
 })
 export class WsService {
 
-  private wsBaseUrl = 'https://detailsmexico.com/ws/';
+  private wsBaseUrl = 'https://detailsmexico.com/json/calls/';
 
   private innivationApiKey = 'app-412454-ujd-7819';
   private importlineApiKey = 'ee2dfJykM4KEKE9OKjnIU89';
@@ -22,7 +23,7 @@ export class WsService {
   private productosNuevosJSON = '../assets/json/new.json';
   private productosBestSellerJSON = '../assets/json/bestseller.json';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   /*
     //////////////// WS PROMOOPCION
@@ -106,7 +107,7 @@ export class WsService {
 
   getPromolineAllProducts(): Observable<PromolineProductSingle[]> {
     // Sin parametros se trae todos
-    return this.http.get<PromolineProductSingle[]>(this.wsBaseUrl + 'Promoline_getAllProducts.php',
+    return this.http.get<PromolineProductSingle[]>(this.wsBaseUrl + 'getPromolineProductJSON.php',
                             { responseType: 'json' });
 
   }
@@ -120,8 +121,8 @@ export class WsService {
   getPromolineGetPrice(): Observable<PromolinePrice[]> {
     // Se trae id de producto y precio
     const pass = 'CK9GK3';
-    return this.http.get<PromolinePrice[]>(this.wsBaseUrl + 'Promoline_getPrice.php',
-                      { responseType: 'json', params: { pass } });
+    return this.http.get<PromolinePrice[]>(this.wsBaseUrl + 'getPromolinePriceJSON.php',
+                      { responseType: 'json'});
   }
 
    /*
@@ -163,7 +164,7 @@ export class WsService {
     PHP https://www.innovation.com.mx/webservice/producto.php?key=app-412454-ujd-7819
   */
   getInnovationGetImages(): Observable<any> {
-
+    
     return null;
   }
 
@@ -174,10 +175,19 @@ export class WsService {
     Trae todos los productos
     PHP
   */
+
   getInnovationGetProducts(): Observable<InnovationProduct[]> {
     // Este es el que ya se trae todos los productos y los datos
-    return this.http.get<InnovationProduct[]>(this.wsBaseUrl + 'Innovation_getProductos.php',
-                      { params: { key: this.innivationApiKey } });
+    return this.http.get<InnovationProduct[]>(this.wsBaseUrl + 'getInnovationProductJSON.php',
+    { responseType: 'json' });
+  }
+
+  getInnovationExistencias(): Observable<InnovationExistencias[]> {
+
+    return this.http.get<InnovationExistencias[]>(this.wsBaseUrl + 'getInnovationStockJSON.php',
+
+    { responseType: 'json' });
+
   }
 
   /*
@@ -204,9 +214,9 @@ export class WsService {
     Se trae todos los productos
     PHP https://importline.com.mx/api_importline/service.php?key=ee2dfJykM4KEKE9OKjnIU89&action=get-productos
   */
-  getImportlineGetProductos(): Observable<ImporlineResponse> {
+  getImportlineGetProductos(): Observable<ImportlineResponse> {
     // Este se trae todos los productos, es el que vamos a usar.
-    return this.http.get<ImporlineResponse>(this.wsBaseUrl + 'Importline_getProductos.php',
+    return this.http.get<ImportlineResponse>(this.wsBaseUrl + 'Importline_getProductos.php',
                 { params: { key: this.importlineApiKey, action: 'get-productos' } });
   }
 

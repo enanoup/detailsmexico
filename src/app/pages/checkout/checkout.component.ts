@@ -15,7 +15,7 @@ import { environment } from '../../../environments/environment';
 })
 export class CheckoutComponent implements OnInit, OnDestroy {
 
-  @ViewChild('Total', {static: false}) total: ElementRef;
+  @ViewChild('Total') total: ElementRef;
 
   productosCarrito: Producto[] = [];
   subTotal = 0;

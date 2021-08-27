@@ -16,10 +16,10 @@ import { MatProgressSpinnerModule } from '@angular/material';
 import { SearchPipe } from '../pipes/search.pipe';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { ContactComponent } from './contact/contact.component';
-import { FragmentPolyfillModule } from '../fragment-polyfill.module';
 import { CatalogosComponent } from './catalogos/catalogos.component';
 import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { FaqComponent } from './faq/faq.component';
+// import { FragmentPolyfillModule } from '../fragment-polyfill.module';
 
 @NgModule({
   declarations: [
@@ -47,9 +47,11 @@ import { FaqComponent } from './faq/faq.component';
     MatProgressSpinnerModule,
     RecaptchaModule,
     RecaptchaFormsModule,
+    /*
     FragmentPolyfillModule.forRoot( {
       smooth: true
     }),
+    */
   ],
   exports: [
     HeaderComponent,

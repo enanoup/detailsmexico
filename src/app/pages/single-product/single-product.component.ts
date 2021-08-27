@@ -4,6 +4,7 @@ import { ShoppingCartService } from '../../services/shopping-cart.service';
 import { Producto, Url } from '../interfaces/producto-interface';
 import { ProductoService } from '../../services/producto.service';
 import swal from 'sweetalert2';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 let $ = (window as any)['jQuery'];
 
@@ -23,7 +24,8 @@ export class SingleProductComponent implements OnInit, AfterViewInit {
 
   constructor(private route: ActivatedRoute,
               private shoppingService: ShoppingCartService,
-              private productoService: ProductoService) {}
+              private productoService: ProductoService,
+              private storageService: LocalStorageService) {}
 
 
     loadFotorama(urls: Url[]) {
@@ -62,34 +64,44 @@ export class SingleProductComponent implements OnInit, AfterViewInit {
 
     }
 
+    getBestAndNewProducts() : Promise<boolean> {
+          
+      return new Promise ( resolve => {
+
+        this.storageService.getNewAndBestsellerProducts().then( responseProducts => {
+          if(responseProducts) {
+            for( let i=0; i<responseProducts.length; i++){
+              if(i < 10){
+                this.bestSellerProducts.push(responseProducts[i]);
+              } else {
+                this.newProducts.push(responseProducts[i]);
+              }
+            }
+          }
+        });
+      resolve (true);
+      });
+
+    }
+
     async ngOnInit() {
 
     // Este producto viene del resolver para que cargue el prod antes de renderizar la pagina
 
     this.singleProduct = this.route.snapshot.data.producto;
-    this.loadFotorama(this.singleProduct.urls);
-
-    await this.productoService.getNewAndBestsellerProducts().then( resolve => {
-
-      if ( resolve ) {
-        resolve.forEach( producto => {
-          if ( producto.nuevoProducto ) {
-            this.newProducts.push( producto );
-          } else {
-            this.bestSellerProducts.push( producto );
-          }
-        });
-      }
-
-    });
+ 
+    await this.getBestAndNewProducts();
 
     this.route.params.subscribe ( param => {
       this.route.snapshot = param.sku;
     });
 
-  }
-
-
+    // Por alguna razón hay que esperar a que carguen bien los productos
+    setTimeout(() => {
+      this.loadFotorama(this.singleProduct.urls);
+    }, 2000);
+   
+    }
 
   ngAfterViewInit() {
 

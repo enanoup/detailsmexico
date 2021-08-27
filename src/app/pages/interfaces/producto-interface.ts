@@ -4,6 +4,7 @@ export interface Producto {
   sku: string;
   nombre: string;
   descripcion: string;
+  masDescripcion?: string
   hasThumbnails?: boolean;
   hasDescuento?: boolean;
   descuento?: number;

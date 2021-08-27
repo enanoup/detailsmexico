@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Producto } from '../pages/interfaces/producto-interface';
-import { PromolineService } from './promoline.service';
 import { InnovationService } from './innovation.service';
-import { ImportlineService } from './importline.service';
 import { LocalStorageService } from './local-storage.service';
 import { BestsellerNewService } from './bestseller-new.service';
 
@@ -13,19 +11,18 @@ import { BestsellerNewService } from './bestseller-new.service';
 })
 export class ProductoService {
 
-
   bestAndNewProducts: Producto[] = [];
-  pipeResults = 0;
   detailsProducts: Producto[] = [];
   producto: Producto = null;
+  pipeResults = 0;
 
   private productosJSON = '../assets/json/productos.json';
 
 
   constructor(  private http: HttpClient,
-                private promolineService: PromolineService,
+                //private promolineService: PromolineService,
                 private innovationService: InnovationService,
-                private importlineService: ImportlineService,
+                //private importlineService: ImportlineService,
                 private storageService: LocalStorageService,
                 private bestService: BestsellerNewService) { }
 
@@ -85,12 +82,12 @@ export class ProductoService {
 public getAllDetailProducts(): Promise<Producto[]> {
 
   return new Promise ( resolve => {
-
+    
       // Primero llamamos a la función que nos dice si hay productos o no en el storage
-      this.callProductsFromStorage().then( productsFromStorageResolve => {
+      this.callProductsFromStorage().then( booleanStorageResolve => {
 
         // verificamos true o false
-        if (productsFromStorageResolve) {
+        if (booleanStorageResolve) {
           resolve( this.detailsProducts );
         // Si no hay en el storage llamamos a los webservices
         } else {
@@ -101,6 +98,12 @@ public getAllDetailProducts(): Promise<Producto[]> {
           });
         }
       });
+
+  // Primero es necesario que carguen los productos para de ahí generar los Best and New aleatorios
+  this.getNewAndBestsellerProducts();
+
+
+
   });
 }
 
@@ -110,17 +113,12 @@ public getNewAndBestsellerProducts(): Promise<Producto[]> {
 
       // Primero llamamos a la función que nos dice si hay productos o no en el storage
       this.callBestAndNewFromStorage().then( productsFromStorageResolve => {
-
         // verificamos true o false
         if (productsFromStorageResolve) {
           resolve( this.bestAndNewProducts );
         // Si no hay en el storage llamamos a los webservices
         } else {
-          this.callBestAndNewProducts().then (webServiceResolve => {
-            if ( webServiceResolve ) {
-              resolve( this.bestAndNewProducts );
-            }
-          });
+          this.getBestAndNewProducts(this.detailsProducts);
         }
       });
   });
@@ -149,10 +147,10 @@ public callProductsFromStorage(): Promise<boolean> {
 public callBestAndNewFromStorage(): Promise<boolean> {
 
   return new Promise( async resolve => {
-
+  
+       // verificamos que haya productos en el storage
       await this.storageService.getNewAndBestsellerProducts().then( storageResolve => {
 
-        // verificamos que haya productos en el storage
         if (storageResolve && storageResolve.length > 0) {
           this.bestAndNewProducts = storageResolve;
           resolve( true );
@@ -166,35 +164,33 @@ public callBestAndNewFromStorage(): Promise<boolean> {
 
 }
 
+public getBestAndNewProducts(productos:Producto[]) {
+  
+// Iteramos los productos y elegimos 20 aleatoreos para BestSeller y New
+
+    for (let i=0; i < 20; i++) {
+      const j = Math.floor(Math.random() * productos.length-1);
+      this.bestAndNewProducts.push(productos[j]);
+    }
+    
+    // Una vez que obtenemos los Best an New, guardamos en el storage
+    this.storageService.saveNewAndBestSellerProducts(this.bestAndNewProducts);
+
+}
+
 public callWebservices(): Promise<boolean> {
 
   return new Promise ( async resolve => {
 
     // Nos traemos todos los productos de los WS
-    await this.promolineService.transformPromolineData().then( data => {
-      if ( data != null ) {
-        this.detailsProducts.push (...data);
+    
+    await this.innovationService.transformInnovationData().then (data => {
+      if(data != null) {
+        this.detailsProducts.push (...data);   
       }
-    });
-
-    /*
-    await this.innovationService.transformInnovationData().then ( data => {
-      if ( data != null ) {
-        this.detailsProducts.push (...data);
-      }
-    });
-*/
-    await this.importlineService.transformImportlineData().then ( data => {
-      if ( data != null ) {
-        this.detailsProducts.push (...data);
-      }
-    });
-
-    if ( this.bestAndNewProducts.length < 1 || this.bestAndNewProducts == null) {
-      await this.callBestAndNewProducts();
-    }
-
-    // Grabamos todos los productos en el Storage
+      this.getBestAndNewProducts(data);
+    })
+  
     this.storageService.saveAllProducts(this.detailsProducts);
 
     resolve (true);
@@ -204,12 +200,7 @@ public callWebservices(): Promise<boolean> {
 
   callBestAndNewProducts(): Promise<boolean> {
     return new Promise( async resolve => {
-      await this.bestService.transformAllNewAndBestSeller().then( data => {
-        if ( this.bestAndNewProducts != null ) {
-          this.bestAndNewProducts.push ( ...data );
-        }
-      });
-      this.storageService.saveNewAndBestSellerProducts(this.bestAndNewProducts);
+      this.getBestAndNewProducts(this.bestAndNewProducts);
       resolve( true );
     });
   }

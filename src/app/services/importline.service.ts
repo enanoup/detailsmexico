@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { WsService } from './ws.service';
 import { Producto, Url } from '../pages/interfaces/producto-interface';
+import { ImportlineProduct } from '../pages/interfaces/importline-interface';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class ImportlineService {
 
   constructor(private wsService: WsService) { }
 
-  getImportlineGetProductos(): Promise<ImportlineProduct[]> {
+  getImportlineGetProductos(): Promise<any[]> {
 
     return new Promise( resolve => {
       this.wsService.getImportlineGetProductos().subscribe( data => {

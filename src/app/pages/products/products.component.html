@@ -1,372 +1,239 @@
+<!-- Start Bradcaump area -->
+<div class="ht__bradcaump__area bg-image--8">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="bradcaump__inner text-center">
+                    <h2 class="bradcaump-title">Cotiza tus productos aquí</h2>
+                    <nav class="bradcaump-content">
+                        <a class="breadcrumb_item" [routerLink]="['/index']">Home</a>
+                        <span class="brd-separetor">/</span>
+                        <span class="breadcrumb_item active">Catálogo de Productos</span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Bradcaump area -->
+<!-- Start Shop Page -->
+<div class="page-shop-sidebar left--sidebar bg--white section-padding--lg" id="top">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-12 order-2 order-lg-1 md-mt-40 sm-mt-40">
+                <div class="shop__sidebar">
+                    <aside class="wedget__categories poroduct--cat">
+                        <h3 class="wedget__title">Categorías</h3>
+                        <ul>
+                            <li><a [routerLink]="['/products', 'antiestres']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Antiestrés</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'bar']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Bar</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'belleza']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Belleza</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'cuidado']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Cuidado Personal</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'ecologia']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Ecología</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'ejecutiva']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Ejecutiva</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'escolares']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Escolares y Niños</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'escritura']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Escritura</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'fitness']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Fitness</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'herramientas']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Herramientas</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'hieleras']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Hieleras</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'hogar']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Hogar</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'libretas']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Libretas</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'llaveros']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Llaveros</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'memorias']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Memorias USB</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'mochilas']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Mochilas y Maletas</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'oficina']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Oficina</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'paraguas']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Paragüas</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'power bank']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Power Bank</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'relojes']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Relojes</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'set']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Sets de Regalos</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'tazas']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Tazas y Cilindros</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'tecnologia']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Tecnología</a>
+                            </li>
+                            <li><a [routerLink]="['/products', 'viaje']" fragment="top" routerLinkActive="router-link-active" (click)="resetPager()">Viaje</a>
+                            </li>
+                        </ul>
+                    </aside>
 
-        <!-- Start Bradcaump area -->
-        <div class="ht__bradcaump__area bg-image--8">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="bradcaump__inner text-center">
-                                <h2 class="bradcaump-title">Cotiza tus productos aquí</h2>
-                                <nav class="bradcaump-content">
-                                  <a class="breadcrumb_item" [routerLink]="['/index']">Home</a>
-                                  <span class="brd-separetor">/</span>
-                                  <span class="breadcrumb_item active">Catálogo de Productos</span>
-                                </nav>
+                </div>
+            </div>
+            <div class="col-lg-9 col-12 order-1 order-lg-2">
+
+                <div class="row">
+
+                    <div class="col-lg-12">
+                        <div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between">
+                            <div class="shop__list nav justify-content-center pt-1" role="tablist">
+                                <a class="nav-item nav-link active" data-toggle="tab" href="#nav-grid" role="tab"><i class="fa fa-th"></i></a>
+                                <a class="nav-item nav-link" data-toggle="tab" href="#nav-list" role="tab"><i class="fa fa-list"></i></a>
                             </div>
+
+                            <form (ngSubmit)="sendSearch()">
+
+                                <div class="input-group">
+
+                                    <input type="text" class="form-control" name="search" id="search" [(ngModel)]="searchCriteria" placeholder="Buscar producto" (change)="resetPager()">
+                                    <button type="submit">
+                                                                <i class="input-group-addon fa fa-search" aria-hidden="true"></i>
+                                                        </button>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!-- End Bradcaump area -->
-            <!-- Start Shop Page -->
-            <div class="page-shop-sidebar left--sidebar bg--white section-padding--lg" id="top">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-lg-3 col-12 order-2 order-lg-1 md-mt-40 sm-mt-40">
-                            <div class="shop__sidebar">
-                                <aside class="wedget__categories poroduct--cat">
-                                    <h3 class="wedget__title">Categorías</h3>
-                                    <ul>
-                                        <li><a [routerLink]="['/products', 'carpeta']" fragment="top" routerLinkActive="router-link-active" 
-                                            (click)="resetPager()">Carpetas</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'libreta']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Libretas</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'portafolio']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Portafolios</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'notas']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Set de Notas</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'tarjetero']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Tarjeteros</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'bolsas']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Bolsas de mano</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'playera']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Playeras</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'vaso']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Vasos</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'cilindro']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Cilindros</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'termo']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Termos</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'taza']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Tazas</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'ecologic']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Ecológicos</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'encendedor']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Encendedores</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'boligrafo']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Bolígrafos</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'marcatexto']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Marcatextos</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'lapi']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Lápices y Lapiceras</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'herramienta']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Herramientas</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'juego']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Juegos</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'estres']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Antiestrés</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'llavero']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Llaveros</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'lonchera']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Loncheras y Hieleras</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'retrato']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Portarretratos</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'regalo']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Regalos</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'golf']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Artículos de Golf</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'vino']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Para Vinos</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'cross']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Bolígrafos Cross</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'sheaffer']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Bolígrafos Sheaffer</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'koon']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Koon artesanos</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'reloj']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Relojes</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'paragüas']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Paragüas</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'celular']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Accesorios para Celular</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'reloj']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Relojes</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'audifono']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Audífonos</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'bocina']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()"> Bocinas</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'power']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Power Bank</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'usb']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">USB</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'viaje']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Viaje</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'maleta']" fragment="top" routerLinkActive="router-link-active"
-                                           (click)="resetPager()">Maletas</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'playa']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Artículos Playa</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'mochila']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Mochilas</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'morral']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Morrales</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'cartera']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Carteras</a>
-                                        </li>
-                                        <li><a [routerLink]="['/products', 'navaja']" fragment="top" routerLinkActive="router-link-active"
-                                            (click)="resetPager()">Navajas</a>
-                                        </li>
-                                    </ul>
-                                </aside>
-                                <!--aside class="wedget__categories pro--range">
-                                    <h3 class="wedget__title">Filter by price</h3>
-                                    <div class="content-shopby">
-                                        <div class="price_filter s-filter clear">
-                                            <form action="#" method="GET">
-                                                <div id="slider-range"></div>
-                                                <div class="slider__range--output">
-                                                    <div class="price__output--wrap">
-                                                        <div class="price--output">
-                                                            <span>Price :</span><input type="text" id="amount" readonly="">
-                                                        </div>
-                                                        <div class="price--filter">
-                                                            <a href="#">Filter</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </aside-->
-                                <!--aside class="wedget__categories poroduct--tag">
-                                    <h3 class="wedget__title">Product Tags</h3>
-                                    <ul>
-                                        <li><a href="#">Acero</a></li>
-                                        <li><a href="#">Negocios</a></li>
-                                        <li><a href="#">Cocina</a></li>
-                                        <li><a href="#">Salud</a></li>
-                                        <li><a href="#">History</a></li>
-                                        <li><a href="#">Misterio</a></li>
-                                        <li><a href="#">Inspiracion</a></li>
-                                        <li><a href="#">Religion</a></li>
-                                        <li><a href="#">Hogar</a></li>
-                                        <li><a href="#">Oficina</a></li>
-                                        <li><a href="#">Musica</a></li>
-                                        <li><a href="#">Tecnología</a></li>
-                                        <li><a href="#">Gadgets</a></li>
-                                    </ul>
-                                </aside-->
-                                <!--aside class="wedget__categories sidebar--banner">
-                                    <img src="assets/images/others/banner_left.jpg" alt="banner images">
-                                    <div class="text">
-                                        <h2>new products</h2>
-                                        <h6>save up to <br> <strong>40%</strong>off</h6>
-                                    </div>
-                                </aside-->
-                            </div>
-                        </div>
-                        <div class="col-lg-9 col-12 order-1 order-lg-2">
-                            
-                            <div class="row">
-                               
-                                <div class="col-lg-12">
-                                    <div class="shop__list__wrapper d-flex flex-wrap flex-md-nowrap justify-content-between">
-                                        <div class="shop__list nav justify-content-center pt-1" role="tablist">
-                                            <a class="nav-item nav-link active" data-toggle="tab" href="#nav-grid" role="tab"><i class="fa fa-th"></i></a>
-                                            <a class="nav-item nav-link" data-toggle="tab" href="#nav-list" role="tab"><i class="fa fa-list"></i></a>
-                                        </div>
-                                    
-                                        <form (ngSubmit) = "sendSearch()">
-                                        
-                                                <div class="input-group">
-                                                        
-                                                        <input type="text" class="form-control" name="search" id="search" 
-                                                                [(ngModel)] = "searchCriteria" placeholder="Buscar producto" (change)="resetPager()">
-                                                        <button type="submit">
-                                                                <i class="input-group-addon fa fa-search" aria-hidden="true"></i>
-                                                        </button>
-                                                </div>
-                                    </form>
-                                    </div>
+                <div class="tab__container">
+
+                    <div class="shop-grid tab-pane fade show active" id="nav-grid" role="tabpanel">
+                        <div class="row pl-3">
+
+                            <!-- Start Single Product -->
+
+                            <div class="text-center" style="width: 100% !important;" *ngIf="(productos | search:sendSearchValue) as results">
+                                <mat-paginator [length]="results.length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" (page)="handlePage( $event )" showFirstLastButtons #paginator>
+                                </mat-paginator>
+
+                                <div style="margin: 0 auto;" class="pt-5" *ngIf="!loading">
+                                    <h3>Cargando Productos...</h3>
+                                    <br>
+                                    <mat-progress-spinner class="mat-progress-spinner" style="margin: 0 auto;" mode="indeterminate">
+                                    </mat-progress-spinner>
                                 </div>
-                            </div>
-                            <div class="tab__container">
-                                
-                                <div class="shop-grid tab-pane fade show active" id="nav-grid" role="tabpanel">
-                                    <div class="row pl-3">
-                                        
-                                        <!-- Start Single Product -->
-                                 
-                                                <div class="text-center" style="width: 100% !important;" *ngIf="(productos | search:sendSearchValue) as results">
-                                                    <mat-paginator 
-                                                        [length]="results.length"
-                                                        [pageSize]="pageSize"
-                                                        [pageSizeOptions]="pageSizeOptions"
-                                                        (page)="handlePage( $event )" 
-                                                        showFirstLastButtons #paginator>
-                                                    </mat-paginator>
 
-                                                    <div style="margin: 0 auto;" class="pt-5" *ngIf="!loading">
-                                                        <h3>Cargando Productos...</h3>
-                                                        <br>
-                                                        <mat-progress-spinner class="mat-progress-spinner" style="margin: 0 auto;" mode="indeterminate">
-                                                        </mat-progress-spinner>
-                                                    </div>
+                                <div class="row pt-5" *ngIf="results.length > 0; else noResultsFound">
 
-                                                    <div class="row pt-5" *ngIf="results.length > 0; else noResultsFound" >
+                                    <div class="product product__style--3 col-lg-3 col-md-3 col-sm-6 col-6" *ngFor="let producto of results | paginate:pageSize:pageNumber">
 
-                                                            <div class="product product__style--3 col-lg-3 col-md-3 col-sm-6 col-6" 
-                                                                *ngFor="let producto of results | paginate:pageSize:pageNumber"> 
-
-                                                                    <div class="product__thumb" >
-                                                                            <a class="first__img" [routerLink]="['/products/single-product', producto.sku]" fragment = "singleProd"><img [src]="producto.urls[0].url" alt="product image"></a>
-                                                                            <a *ngIf="producto.urls[1]" class="second__img animation1" [routerLink]="['/products/single-product', producto.sku]" [fragment] = "'singleProd'">
-                                                                                <img [src]="producto.urls[1].url" alt="product image">
-                                                                            </a>
-                                                                            <!--div class="hot__box">
+                                        <div class="product__thumb">
+                                            <a class="first__img" [routerLink]="['/products/single-product', producto.sku]" fragment="singleProd"><img [src]="producto.urls[0].url" alt="product image"></a>
+                                            <a *ngIf="producto.urls[1]" class="second__img animation1" [routerLink]="['/products/single-product', producto.sku]" [fragment]="'singleProd'">
+                                                <img [src]="producto.urls[1].url" alt="product image">
+                                            </a>
+                                            <!--div class="hot__box">
                                                                                 <span class="hot-label">BEST SALLER</span>
                                                                             </div-->
-                                                                    </div>
-                                                                        <div class="product__content content--center">
-                                                                            <h4><a routerLink="single-product">{{ producto.nombre }}</a></h4>
-                                                                            <ul class="prize d-flex">
-                                                                                <li>{{ producto.precioActual | currency}}</li>
-                                                                                <li *ngIf="producto.precioAnterior" class="old_prize">$ {{ producto.precioAnterior }}</li>
-                                                                            </ul>
-                                                                            <div class="action">
-                                                                                <div class="actions_inner">
-                                                                                    <ul class="add_to_links">
-                                                                                        <li><a class="cart" href="cart.html"><i class="bi bi-shopping-bag4"></i></a></li>
-                                                                                        <li><a class="wishlist" href="wishlist.html"><i class="bi bi-shopping-cart-full"></i></a></li>
-                                                                                        <li><a class="compare" href="#"><i class="bi bi-heart-beat"></i></a></li>
-                                                                                        <li><a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link" href="#productmodal"><i class="bi bi-search"></i></a></li>
-                                                                                    </ul>
-                                                                                </div>
-                                                                            </div>
-                                                                            <div class="product__hover--content">
-                                                                                <ul class="rating d-flex">
-                                                                                    <li class="on"><i class="fa fa-star"></i></li>
-                                                                                    <li class="on"><i class="fa fa-star"></i></li>
-                                                                                    <li class="on"><i class="fa fa-star"></i></li>
-                                                                                    <li class="on"><i class="fa fa-star"></i></li>
-                                                                                    <li class="on"><i class="fa fa-star"></i></li>
-                                                                                    <!--li><i class="fa fa-star-o"></i></li-->      
-                                                                                </ul>
-                                                                            </div>
-                                                                        </div>
-                                                                
-                                                            </div>
-
-                                                    </div>
-
-                                                    
-                                                        <ng-template #noResultsFound >
-                                                            <h3 class="pt-5 pb-5 text-center" *ngIf="loading"> <strong>No se encontró el producto,<br> por favor intente nuevamente</strong></h3>
-                                                        </ng-template>
-                                                   
-                                                    
-      
-                                                    </div>
-                                                    <!-- End Single Product -->
-                                                                        
-                                       
-                                    </div>
-                                    <!--ul class="wn__pagination">
-                                        <li class="active"><a href="#">1</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
-                                    </ul-->
-                                </div>
-
-
-                                <div class="shop-grid tab-pane fade productos" id="nav-list" role="tabpanel">
-                                    <div class="list__view__wrapper">
-
-                                        <!-- Start Single Product -->
-                                        <div class="list__view" *ngFor="let producto of productos | search:sendSearchValue | paginate:pageSize:pageNumber">
-                                            <div class="thumb">
-                                                <a class="first__img" [routerLink]="['/products/single-product', producto.sku]" [fragment]="'singleProd'"><img [src]="producto.urls[0].url" alt="product images"></a>
-                                                <a *ngIf="producto.urls[1]" class="second__img animation1" [routerLink]="['/products/single-product', producto.sku]" [fragment]="'singleProd'">
-                                                        <img [src]="producto.urls[1].url" alt="product images">
-                                                </a>
+                                        </div>
+                                        <div class="product__content content--center">
+                                            <h4><a routerLink="single-product">{{ producto.nombre }}</a></h4>
+                                            <ul class="prize d-flex">
+                                                <li>{{ producto.precioActual | currency}}</li>
+                                                <li *ngIf="producto.precioAnterior" class="old_prize">$ {{ producto.precioAnterior }}</li>
+                                            </ul>
+                                            <div class="action">
+                                                <div class="actions_inner">
+                                                    <ul class="add_to_links">
+                                                        <li><a class="cart" [routerLink]="['/products/single-product', producto.sku]"><i class="bi bi-shopping-bag4"></i></a></li>
+                                                        <li><a class="wishlist" [routerLink]="['/products/single-product', producto.sku]"><i class="bi bi-shopping-cart-full"></i></a></li>
+                                                        <li><a class="compare" [routerLink]="['/products/single-product', producto.sku]"><i class="bi bi-heart-beat"></i></a></li>
+                                                        <li><a data-toggle="modal" title="Quick View" class="quickview modal-view detail-link" [routerLink]="['/products/single-product', producto.sku]"><i class="bi bi-search"></i></a></li>
+                                                    </ul>
+                                                </div>
                                             </div>
-                                            <div class="content">
-                                                <h2><a routerLink="single-product">{{producto.nombre}}</a></h2>
+                                            <div class="product__hover--content">
                                                 <ul class="rating d-flex">
                                                     <li class="on"><i class="fa fa-star"></i></li>
                                                     <li class="on"><i class="fa fa-star"></i></li>
                                                     <li class="on"><i class="fa fa-star"></i></li>
                                                     <li class="on"><i class="fa fa-star"></i></li>
                                                     <li class="on"><i class="fa fa-star"></i></li>
+                                                    <!--li><i class="fa fa-star-o"></i></li-->
                                                 </ul>
-                                                <ul class="prize__box">
-                                                    <li>$ {{producto.precioActual}}</li>
-                                                    <li *ngIf="producto.precioAnterior" class="old__prize">$ {{producto.precioAnterior}}</li>
-                                                </ul>
-                                                <p [innerHTML]="producto.descripcion"></p>
-                                                <ul class="cart__action d-flex">
-                                                    <li class="cart"><a [routerLink]="['/products/single-product', producto.sku]" [fragment]="'singleProd'">Solicitar producto</a></li>
-                                                    <!--li class="wishlist"><a href="cart.html"></a></li>
-                                                    <li class="compare"><a href="cart.html"></a></li-->
-                                                </ul>
-                                                <br>
-                                            <br>
-                                            <hr>
                                             </div>
-                                            
                                         </div>
-                                        <!-- End Single Product -->
-                        
+
                                     </div>
-                                    
+
                                 </div>
-                
+
+
+                                <ng-template #noResultsFound>
+                                    <h3 class="pt-5 pb-5 text-center" *ngIf="loading"> <strong>No se encontró el producto,<br> por favor intente nuevamente</strong></h3>
+                                </ng-template>
+
+
+
                             </div>
-    
-                   
+                            <!-- End Single Product -->
+
+
                         </div>
+                        <!--ul class="wn__pagination">
+                                        <li class="active"><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#"><i class="zmdi zmdi-chevron-right"></i></a></li>
+                                    </ul-->
                     </div>
+
+
+                    <div class="shop-grid tab-pane fade productos" id="nav-list" role="tabpanel">
+                        <div class="list__view__wrapper">
+
+                            <!-- Start Single Product -->
+                            <div class="list__view" *ngFor="let producto of productos | search:sendSearchValue | paginate:pageSize:pageNumber">
+                                <div class="thumb">
+                                    <a class="first__img" [routerLink]="['/products/single-product', producto.sku]" [fragment]="'singleProd'"><img [src]="producto.urls[0].url" alt="product images"></a>
+                                    <a *ngIf="producto.urls[1]" class="second__img animation1" [routerLink]="['/products/single-product', producto.sku]" [fragment]="'singleProd'">
+                                        <img [src]="producto.urls[1].url" alt="product images">
+                                    </a>
+                                </div>
+                                <div class="content">
+                                    <h2><a routerLink="single-product">{{producto.nombre}}</a></h2>
+                                    <ul class="rating d-flex">
+                                        <li class="on"><i class="fa fa-star"></i></li>
+                                        <li class="on"><i class="fa fa-star"></i></li>
+                                        <li class="on"><i class="fa fa-star"></i></li>
+                                        <li class="on"><i class="fa fa-star"></i></li>
+                                        <li class="on"><i class="fa fa-star"></i></li>
+                                    </ul>
+                                    <ul class="prize__box">
+                                        <li>$ {{producto.precioActual}}</li>
+                                        <li *ngIf="producto.precioAnterior" class="old__prize">$ {{producto.precioAnterior}}</li>
+                                    </ul>
+                                    <p [innerHTML]="producto.descripcion"></p>
+                                    <ul class="cart__action d-flex">
+                                        <li class="cart"><a [routerLink]="['/products/single-product', producto.sku]" [fragment]="'singleProd'">Solicitar producto</a></li>
+                                        <!--li class="wishlist"><a href="cart.html"></a></li>
+                                                    <li class="compare"><a href="cart.html"></a></li-->
+                                    </ul>
+                                    <br>
+                                    <br>
+                                    <hr>
+                                </div>
+
+                            </div>
+                            <!-- End Single Product -->
+
+                        </div>
+
+                    </div>
+
                 </div>
+
+
             </div>
-            <!-- End Shop Page -->
+        </div>
+    </div>
+</div>
+<!-- End Shop Page -->

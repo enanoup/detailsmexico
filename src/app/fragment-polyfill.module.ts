@@ -1,10 +1,12 @@
-import { NgModule, InjectionToken, ElementRef, Inject, Directive, OnInit, OnDestroy } from '@angular/core';
+import { NgModule, InjectionToken, ElementRef, Inject, Directive, OnInit, OnDestroy, Injectable } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ModuleWithProviders } from '@angular/compiler/src/core';
 
 // Esta clase arregla los link ANCHOR
+
+/*
 
 export interface WindowScrollerOptions {
   smooth: boolean;
@@ -23,6 +25,7 @@ export abstract class WindowScroller {
 // I provide an implementation for scrolling a given Element Reference into view. By
 // default, it uses the native .scrollIntoView() method; but, it can be overridden to
 // use something like a jQuery plug-in, or other custom implementation.
+@Injectable()
 export class NativeWindowScroller implements WindowScroller {
 
   private behavior: 'auto' | 'smooth';
@@ -30,7 +33,7 @@ export class NativeWindowScroller implements WindowScroller {
 
   // I initialize the window scroller implementation.
   public constructor( @Inject( WINDOW_SCROLLER_OPTIONS ) options: WindowScrollerOptions ) {
-
+    
       this.behavior = ( options.smooth ? 'smooth' : 'auto' );
       this.timer = null;
 
@@ -196,3 +199,4 @@ export class FragmentPolyfillModule {
     }
 
 }
+*/

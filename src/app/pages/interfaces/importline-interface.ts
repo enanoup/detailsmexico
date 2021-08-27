@@ -1,9 +1,9 @@
-interface ImporlineResponse {
+export interface ImportlineResponse {
   type: string;
   response: ImportlineProduct[];
 }
 
-interface ImportlineProduct {
+export interface ImportlineProduct {
   id: string;
   clave: string;
   descripcion: string;
@@ -17,7 +17,7 @@ interface ImportlineProduct {
   inventario: Inventario[];
 }
 
-interface Inventario {
+export interface Inventario {
   clave: string;
   tipo: string;
   almacen1: string;
@@ -31,7 +31,7 @@ interface Inventario {
   externo: string;
 }
 
-interface Imagenescolore {
+export interface Imagenescolore {
   imagen_chica: string;
   imagen_mediana: string;
 }

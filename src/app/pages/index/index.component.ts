@@ -10,6 +10,7 @@ import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { FormsService } from '../../services/forms.service';
 import { Subscription } from 'rxjs';
 import swal from 'sweetalert2';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 let $ = (window as any)['jQuery'];
 
@@ -23,10 +24,9 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
   productosNuevos: Producto[] = [];
   productosBestSeller: Producto[] = [];
-  promolineProducto: PromolineProductSingle;
+  loading = false;
+  spinner = false;
 
-  innovationProducts: InnovationProduct[] = [];
-  detailsProducts: Producto[] = [];
   form: any;
   name: string;
   email: string;
@@ -50,20 +50,14 @@ export class IndexComponent implements OnInit, AfterViewInit {
   // Aquí agregamos o quitamos los banners
   banners = {
     pc: [
-      'DIA_DEL_PADRE_PC.jpg',
-      'GEL_ANTIBACTERIAL_PC.jpg',
-      'RECOMIENDA_Y_GANA_PC.jpg',
-      'TAPETES_PC.jpg',
-      'TRABAJA_EN_CASA_PC.jpg',
-      'VICTORINOX_PC.jpg'
+      'KIT_PC.jpeg',
+      'REGALOS_PC.jpeg',
+      'TAZAS_PC.jpeg'
     ],
     celular: [
-      'DIA_DEL_PADRE_CELULAR.jpg',
-      'GEL_ANTIBACTERIAL_CELULAR.jpg',
-      'RECOMIENDA_Y_GANA_CELULAR.jpg',
-      'TAPETES_CELULAR.jpg',
-      'TRABAJA_EN_CASA_CELULAR.jpg',
-      'VICTORINOX_CELULAR.jpg'
+      'KIT_CEL.jpeg',
+      'REGALOS_CEL.jpeg',
+      'TAZAS_CEL.jpeg'
     ]
   };
 
@@ -71,8 +65,9 @@ export class IndexComponent implements OnInit, AfterViewInit {
 
   subscripcion: Subscription;
 
-  constructor(private productoService: ProductoService, private formBuilder: FormBuilder,
-              private formService: FormsService) {
+  constructor(private formBuilder: FormBuilder,
+              private formService: FormsService,
+              private storageService: LocalStorageService) {
 
     this.form = this.formBuilder.group({
       name: new FormControl(this.name, [Validators.required]),
@@ -92,70 +87,69 @@ export class IndexComponent implements OnInit, AfterViewInit {
     this.recaptcha = response;
    }
 
+
+   private activarCarruselesDeAparador() {
+
+    $('.furniture--4').owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      items: 4,
+      navText: ['<i class="zmdi zmdi-chevron-left"></i>', '<i class="zmdi zmdi-chevron-right"></i>' ],
+      dots: false,
+      lazyLoad: true,
+      responsive: {
+          0: {
+            items: 1
+          },
+          576: {
+            items: 2
+          },
+          768: {
+            items: 3
+          },
+          992: {
+            items: 4
+          },
+          1920: {
+            items: 4
+          }
+      }
+    });
+
+    $('.furniture--10').owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      autoplay: true,
+      autoplayTimeout: 3000,
+      items: 4,
+      navText: ['<i class="zmdi zmdi-chevron-left"></i>', '<i class="zmdi zmdi-chevron-right"></i>' ],
+      dots: false,
+      lazyLoad: true,
+      responsive: {
+          0: {
+            items: 1
+          },
+          576: {
+            items: 2
+          },
+          768: {
+            items: 3
+          },
+          992: {
+            items: 4
+          },
+          1920: {
+            items: 4
+          }
+      }
+    });
+   }
+  
   async ngAfterViewInit() {
-
-
-    setTimeout(() => {
-
-      $('.furniture--4').owlCarousel({
-        loop: true,
-        margin: 0,
-        nav: true,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        items: 4,
-        navText: ['<i class="zmdi zmdi-chevron-left"></i>', '<i class="zmdi zmdi-chevron-right"></i>' ],
-        dots: false,
-        lazyLoad: true,
-        responsive: {
-            0: {
-              items: 1
-            },
-            576: {
-              items: 2
-            },
-            768: {
-              items: 3
-            },
-            992: {
-              items: 4
-            },
-            1920: {
-              items: 4
-            }
-        }
-      });
-
-      $('.furniture--10').owlCarousel({
-        loop: true,
-        margin: 0,
-        nav: true,
-        autoplay: true,
-        autoplayTimeout: 3000,
-        items: 4,
-        navText: ['<i class="zmdi zmdi-chevron-left"></i>', '<i class="zmdi zmdi-chevron-right"></i>' ],
-        dots: false,
-        lazyLoad: true,
-        responsive: {
-            0: {
-              items: 1
-            },
-            576: {
-              items: 2
-            },
-            768: {
-              items: 3
-            },
-            992: {
-              items: 4
-            },
-            1920: {
-              items: 4
-            }
-        }
-      });
-
-  }, 1000);
 
   }
 
@@ -205,37 +199,6 @@ export class IndexComponent implements OnInit, AfterViewInit {
         }
       }
     }
-
-    /*
-    let img1 = '';
-    let img2 = '';
-    let img3 = '';
-
-    const banner1: any = document.getElementById('banner1');
-    const banner2: any = document.getElementById('banner2');
-    // const banner3: any = document.getElementById('banner3');
-
-    const screenWidth = window.innerWidth;
-
-    if ( screenWidth < 420 ) {
-      img1 = '../../assets/images/portadas/BANNER-MOVIL-640X815.jpg';
-      img2 = '../../assets/images/portadas/REFERIDOS01.jpg';
-      img3 = '';
-    } else {
-        // desktop image
-      img1 = '../../assets/images/portadas/BANNER-VITORINOX.jpg';
-      img2 = '../../assets/images/portadas/REFERIDOS01.jpg';
-      img3 = '';
-    }
-
-    const bgValue1 = 'url(' + img1 + ')';
-    const bgValue2 = 'url(' + img2 + ')';
-    const bgValue3 = 'url(' + img3 + ')';
-
-    banner1.style.backgroundImage = bgValue1;
-    banner2.style.backgroundImage = bgValue2;
-    // banner3.style.backgroundImage = bgValue3;
-    */
   }
 
   triggerModal() {
@@ -246,23 +209,47 @@ export class IndexComponent implements OnInit, AfterViewInit {
     }, 3000);
   }
 
-  async ngOnInit() {
 
+  loadAllProducts(): Promise<boolean> {
 
-    this.triggerModal();
-
-    await this.productoService.getNewAndBestsellerProducts().then ( productosResolve  => {
-
-      productosResolve.forEach( producto => {
-        if (producto.masVendido) {
-          this.productosBestSeller.push(producto);
-        } else {
-          this.productosNuevos.push( producto );
+    return new Promise (resolve => {
+      
+      this.storageService.getNewAndBestsellerProducts().then ( newAndBestProducts => {
+        
+        if(newAndBestProducts) {
+          for (let i = 0; i < newAndBestProducts.length; i++){
+                if( i < 10 ) {
+                  this.productosBestSeller.push(newAndBestProducts[i]);
+                } else {
+                  this.productosNuevos.push(newAndBestProducts[i]);
+                }
+          }  
         }
       });
 
+      resolve (true);
     });
+  }
 
+
+  async ngOnInit() {  
+
+    // Este código va a activar el banner de promociones
+    // this.triggerModal();
+
+  this.loading = await this.loadAllProducts();
+
+  if(this.loading) {
+     
+      setTimeout(() => {
+        // Colocamos un spinner mientras se cargan los productos del carrusel. 
+        this.spinner = true;
+        this.activarCarruselesDeAparador();
+      }, 2000);
+ 
+    }
+
+    
     // Primero se tienen que cargar las imágenes, luego el carrusel. 
     await this.loadImages();
     // Activamos los carruseles

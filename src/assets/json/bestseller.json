@@ -1,142 +1,117 @@
-[
-{
-    "idProducto": 1866,
-    "sku": "HO18015PLPL",
-    "nombre": "JUEGO DE POPOTES DE ACERO INOXIDABLE PL",
-    "descripcion": "JUEGO DE POPOTES DE ACERO INOXIDABLE PL",
-    "hasThumbnails": true,
-    "hasDescuento": false,
-    "precioAnterior": 0.0,
-    "precioActual": 68.02,
-    "rating": 5,
-    "nuevoProducto": false,
-    "masVendido": true,
-    "created": "jul 23, 2019",
-    "cantidad": 97,
-    "urls": [
-        {
+[{
+        "idProducto": 1866,
+        "sku": "PE51115PLAM",
+        "nombre": "SUJETADOR P/ CELULAR STAND POP NG/AM",
+        "descripcion": "SUJETADOR P/ CELULAR STAND POP NG/AM",
+        "hasThumbnails": true,
+        "hasDescuento": false,
+        "precioAnterior": 0.0,
+        "precioActual": 7.67,
+        "rating": 5,
+        "nuevoProducto": false,
+        "masVendido": true,
+        "created": "jul 23, 2019",
+        "cantidad": 10326,
+        "urls": [{
             "idImg": 6683,
             "idProducto": 1866,
-            "url": "https://www.promoline.com.mx/eshop/images/newpromoline/HO18015PLPL.jpg"
-        }
-    ],
-    "categorias": [
-        {
+            "url": "https://www.promoline.com.mx/eshop/images/newpromoline/PE51115PLAM.jpg"
+        }],
+        "categorias": [{
             "idCategoria": 18,
-            "descripcion": "Tecnología"
-        }
-    ],
-    "subcategorias": [
-        {
+            "descripcion": "Electrónicos y Sus Accesorios"
+        }],
+        "subcategorias": [{
             "idCategoria": 18,
             "idSubcategoria": 33,
-            "descripcion": "Bocinas"
-        }
-    ]
-},
-{
-    "idProducto": 1905,
-    "sku": "TX16121PL01",
-    "nombre": "GORRA ADULTO ACRILICO",
-    "descripcion": "GORRA ADULTO ACRILICO",
-    "hasThumbnails": true,
-    "hasDescuento": false,
-    "precioAnterior": 0.0,
-    "precioActual": 18.95,
-    "rating": 5,
-    "nuevoProducto": false,
-    "masVendido": true,
-    "created": "jul 23, 2019",
-    "cantidad": 75,
-    "urls": [
-        {
+            "descripcion": "Electrónicos y Sus Accesorios"
+        }]
+    },
+    {
+        "idProducto": 1905,
+        "sku": "ML61121",
+        "nombre": "LONCHERA HIELERA CORREA AJUST FRESH GRI",
+        "descripcion": "LONCHERA HIELERA CORREA AJUST FRESH GRI",
+        "hasThumbnails": true,
+        "hasDescuento": false,
+        "precioAnterior": 0.0,
+        "precioActual": 136.55,
+        "rating": 5,
+        "nuevoProducto": false,
+        "masVendido": true,
+        "created": "jul 23, 2019",
+        "cantidad": 2990,
+        "urls": [{
             "idImg": 6865,
             "idProducto": 1905,
-            "url": "https://www.promoline.com.mx/eshop/images/newpromoline/TX16121PL01.jpg"
-        }
-    ],
-    "categorias": [
-        {
+            "url": "https://www.promoline.com.mx/eshop/images/newpromoline/ML61121PLGR.jpg"
+        }],
+        "categorias": [{
             "idCategoria": 18,
-            "descripcion": "Tecnología"
-        }
-    ],
-    "subcategorias": [
-        {
+            "descripcion": "Bolsos, Maletas y Portafolios"
+        }],
+        "subcategorias": [{
             "idCategoria": 18,
             "idSubcategoria": 33,
             "descripcion": "Bocinas"
-        }
-    ]
-},
-{
-    "idProducto": 2476,
-    "sku": "EL92085PLPL",
-    "nombre": "CARGADOR WIRELESS/ RELOJ DESPERT KEEN PL",
-    "descripcion": "CARGADOR WIRELESS/ RELOJ DESPERT KEEN PL",
-    "hasThumbnails": true,
-    "hasDescuento": false,
-    "precioAnterior": 0.0,
-    "precioActual": 326.1,
-    "rating": 4,
-    "nuevoProducto": false,
-    "masVendido": true,
-    "created": "jul 23, 2019",
-    "cantidad": 4,
-    "urls": [
-        {
+        }]
+    },
+    {
+        "idProducto": 2476,
+        "sku": "ES21031",
+        "nombre": "BOL METALICO ROLLER GEL+CAJA FIRENZE KIT",
+        "descripcion": "BOL METALICO ROLLER GEL+CAJA FIRENZE KIT",
+        "hasThumbnails": true,
+        "hasDescuento": false,
+        "precioAnterior": 0.0,
+        "precioActual": 64.94,
+        "rating": 4,
+        "nuevoProducto": false,
+        "masVendido": true,
+        "created": "jul 23, 2019",
+        "cantidad": 100,
+        "urls": [{
             "idImg": 8702,
             "idProducto": 2476,
-            "url": "https://www.promoline.com.mx/eshop/images/newpromoline/EL92085PLPL.jpg"
-        }
-    ],
-    "categorias": [
-        {
+            "url": "https://www.promoline.com.mx/eshop/images/newpromoline/ES21031CP00.jpg"
+        }],
+        "categorias": [{
             "idCategoria": 18,
-            "descripcion": "Tecnología"
-        }
-    ],
-    "subcategorias": [
-        {
+            "descripcion": "Escritura"
+        }],
+        "subcategorias": [{
             "idCategoria": 18,
             "idSubcategoria": 33,
-            "descripcion": "Bocinas"
-        }
-    ]
-},
-{
-    "idProducto": 2477,
-    "sku": "OF31027PLBL",
-    "nombre": "CUADERNO P/COLOREAR ADULTO DOODLE BL",
-    "descripcion": "CUADERNO P/COLOREAR ADULTO DOODLE BL",
-    "hasThumbnails": true,
-    "hasDescuento": false,
-    "precioAnterior": 0.0,
-    "precioActual": 49.97,
-    "rating": 5,
-    "nuevoProducto": false,
-    "masVendido": true,
-    "created": "jul 23, 2019",
-    "cantidad": 61,
-    "urls": [
-        {
+            "descripcion": "Escritura"
+        }]
+    },
+    {
+        "idProducto": 2477,
+        "sku": "BB14037CDRJ",
+        "nombre": "VASO METALICO 2PARED 530ML KAFE RJ",
+        "descripcion": "VASO METALICO 2PARED 530ML KAFE RJ",
+        "hasThumbnails": true,
+        "hasDescuento": false,
+        "precioAnterior": 0.0,
+        "precioActual": 77.17,
+        "rating": 5,
+        "nuevoProducto": false,
+        "masVendido": true,
+        "created": "jul 23, 2019",
+        "cantidad": 3700,
+        "urls": [{
             "idImg": 8705,
             "idProducto": 2477,
-            "url": "https://www.promoline.com.mx/eshop/images/newpromoline/OF31027PLBL.jpg"
-        }
-    ],
-    "categorias": [
-        {
+            "url": "https://www.promoline.com.mx/eshop/images/newpromoline/BB14037CDRJ.jpg"
+        }],
+        "categorias": [{
             "idCategoria": 18,
-            "descripcion": "Tecnología"
-        }
-    ],
-    "subcategorias": [
-        {
+            "descripcion": "Bebidas"
+        }],
+        "subcategorias": [{
             "idCategoria": 18,
             "idSubcategoria": 33,
-            "descripcion": "Bocinas"
-        }
-    ]
-}
+            "descripcion": "Bebidas"
+        }]
+    }
 ]

@@ -3,6 +3,7 @@ import { ProductoService } from '../../services/producto.service';
 import { Producto } from '../interfaces/producto-interface';
 import { PageEvent, MatPaginator } from '@angular/material/paginator';
 import { ActivatedRoute } from '@angular/router';
+import { LocalStorageService } from '../../services/local-storage.service';
 
 @Component({
   selector: 'app-products',
@@ -24,9 +25,10 @@ export class ProductsComponent implements OnInit {
 
   loading = false;
 
-  @ViewChild('paginator', {static: false}) paginatorRef: MatPaginator;
+  @ViewChild('paginator') paginatorRef: MatPaginator;
 
   constructor(private productoService: ProductoService,
+              private storageService: LocalStorageService,
               private route: ActivatedRoute) {}
 
   // Cada que cambia el buscador o selecciona categoria se resetea el paginador
@@ -71,8 +73,7 @@ export class ProductsComponent implements OnInit {
 
     return new Promise ( resolve => {
 
-      this.productoService.getAllDetailProducts().then( resolveProducts => {
-
+      this.storageService.getAllProducts().then( resolveProducts => {
         if  ( resolveProducts ) {
           this.productos = resolveProducts;
           resolve( true );
@@ -81,6 +82,7 @@ export class ProductsComponent implements OnInit {
           resolve( false );
         }
       });
+
     });
 
   }

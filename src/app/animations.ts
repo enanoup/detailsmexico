@@ -1,3 +1,5 @@
+/*
+
 import { trigger, transition, style, query, group, animate, animateChild, state } from '@angular/animations';
 
 export const slideInAnimation =
@@ -71,3 +73,4 @@ export const fadeAnimation = [
     ])
   ];
 
+*/

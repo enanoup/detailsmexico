@@ -9,17 +9,18 @@ import { CheckoutResolve } from './pages/checkout.resolve';
 import { ContactComponent } from './pages/contact/contact.component';
 import { CatalogosComponent } from './pages/catalogos/catalogos.component';
 import { FaqComponent } from './pages/faq/faq.component';
+import { ProductResolver } from './pages/products.resolver';
 
 
 const routes: Routes = [
   { path: '',   redirectTo: 'index', pathMatch: 'full'},
-  { path: 'index', component: IndexComponent},
+  { path: 'index', component: IndexComponent, resolve: {boolean: ProductResolver}},
   {
     path: 'products', data: { animation: 'FilterPage'},
     children: [
-      { path: '', component: ProductsComponent },
-      { path: ':search', component: ProductsComponent},
-      { path: 'single-product/:sku', component: SingleProductComponent, resolve: { producto: UserProductoResolve }
+      { path: '', component: ProductsComponent, resolve: {boolean: ProductResolver} },
+      { path: ':search', component: ProductsComponent, resolve: {boolean: ProductResolver}},
+      { path: 'single-product/:sku', component: SingleProductComponent, resolve: {producto: ProductResolver}
       }
     ],
   },
@@ -33,7 +34,7 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes, {
     scrollPositionRestoration: 'enabled',
     anchorScrolling: 'enabled',
-    scrollOffset: [0, 64],
+    scrollOffset: [0, 50],
     useHash: false // Remover al subir a producción
   })],
   exports: [RouterModule]

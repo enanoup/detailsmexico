@@ -52,6 +52,39 @@ export class PromolineService {
 
   }
 
+  getPromolineGetPrice() {
+
+    return new Promise ( resolve => {
+      this.wsService.getPromolineGetPrice().subscribe ( data => {
+        this.promolineProductPrice.push(...data);
+        resolve (this.promolineProductPrice);
+      });
+    });
+  }
+
+  construirPromolineProducts(): Promise<PromolineProductSingle[]> {
+
+    return new Promise( resolve => {
+
+       this.getPromolineGetPrice();
+       this.getPromolineAllProducts().then( productResolve => {
+
+          if (productResolve) {
+
+            let result: PromolinePrice[];
+            productResolve.forEach( producto => {
+                result = this.promolineProductPrice
+                              .filter( prod => prod.Producto === producto.Producto);
+                producto.Precio = result[0].Precio;
+            });
+          } else {
+            console.log('Error: Promoline');
+          }
+          resolve(productResolve);
+      });
+    });
+  }
+
   transformPromolineData(): Promise<Producto[]> {
 
     return new Promise( resolve => {
@@ -112,39 +145,6 @@ export class PromolineService {
       });
     });
 
-  }
-
-  getPromolineGetPrice() {
-
-    return new Promise ( resolve => {
-      this.wsService.getPromolineGetPrice().subscribe ( data => {
-        this.promolineProductPrice.push(...data);
-        resolve (this.promolineProductPrice);
-      });
-    });
-  }
-
-  construirPromolineProducts(): Promise<PromolineProductSingle[]> {
-
-    return new Promise( resolve => {
-
-       this.getPromolineGetPrice();
-       this.getPromolineAllProducts().then( productResolve => {
-
-          if (productResolve) {
-
-            let result: PromolinePrice[];
-            productResolve.forEach( producto => {
-                result = this.promolineProductPrice
-                              .filter( prod => prod.Producto === producto.Producto);
-                producto.Precio = result[0].Precio;
-            });
-          } else {
-            console.log('Error: Promoline');
-          }
-          resolve(productResolve);
-      });
-    });
   }
 
 }
